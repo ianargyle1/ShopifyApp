@@ -20,12 +20,12 @@ app.prepare().then(() => {
   const server = new Koa();
   const router = new Router();
   server.use(session({ sameSite: 'none', secure: true }, server));
-  server.keys = ["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"];
+  server.keys = ["KEYS"];
 
   server.use(
     createShopifyAuth({
-      apiKey: "7024a288b54f6446b96b578d93ad044c",
-      secret: "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",
+      apiKey: "KEY",
+      secret: "SECRET",
       scopes: ['read_products', 'write_content', 'read_themes', 'write_themes'],
       afterAuth(ctx) {
         const { shop, accessToken } = ctx.session;
